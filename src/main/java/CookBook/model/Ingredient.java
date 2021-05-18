@@ -27,6 +27,10 @@ public class Ingredient {
         this.hoeveelheid = nieuweHoeveelheid;
     }
 
+    public int getCalper100() {
+        return calper100;
+    }
+
     @Override
     public String toString() {
         return "Ingredient{" +

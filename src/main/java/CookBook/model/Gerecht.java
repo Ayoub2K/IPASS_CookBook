@@ -10,25 +10,18 @@ public class Gerecht {
     private String bereidingswijze;
     private boolean favoriet;
     private String categorie;
+    private double portie;
 
     private List<Ingredient> alleIngredienten = new ArrayList<>();
 
-    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie) {
+    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, int portie) {
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.beredingstijd = beredingstijd;
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
+        this.portie = portie;
     }
-
-//    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, List<Ingredient> ingredienten) {
-//        this.naam = naam;
-//        this.beschrijving = beschrijving;
-//        this.beredingstijd = beredingstijd;
-//        this.bereidingswijze = bereidingswijze;
-//        this.categorie = categorie;
-//        this.alleIngredienten = ingredienten;
-//    }
 
     public String getNaam(){
         return naam;
@@ -70,8 +63,14 @@ public class Gerecht {
         for (Ingredient ingredient : alleIngredienten){
             if (ingredient.getNaam().equals(naam)){
                 alleIngredienten.remove(ingredient);
+            }else {
+                System.out.println(ingredient);
             }
         }
+    }
+
+    public double berekenPortie(int aantalPorties){
+        return aantalPorties / portie;
     }
 
     public String getBeredingstijd() {
