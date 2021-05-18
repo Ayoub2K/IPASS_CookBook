@@ -13,14 +13,22 @@ public class Gerecht {
 
     private List<Ingredient> alleIngredienten = new ArrayList<>();
 
-    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, List<Ingredient> ingredienten) {
+    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie) {
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.beredingstijd = beredingstijd;
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
-        this.alleIngredienten = ingredienten;
     }
+
+//    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, List<Ingredient> ingredienten) {
+//        this.naam = naam;
+//        this.beschrijving = beschrijving;
+//        this.beredingstijd = beredingstijd;
+//        this.bereidingswijze = bereidingswijze;
+//        this.categorie = categorie;
+//        this.alleIngredienten = ingredienten;
+//    }
 
     public String getNaam(){
         return naam;
@@ -29,7 +37,7 @@ public class Gerecht {
     public int getTotaalCalorieen(){
         int totaalCal = 0;
         for(Ingredient ingredient : alleIngredienten){
-            totaalCal += ingredient.getCalorieen();
+            totaalCal += ingredient.berekenCalorieen();
         }
         return totaalCal;
     }
@@ -96,5 +104,18 @@ public class Gerecht {
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    @Override
+    public String toString() {
+        return "Gerecht{" +
+                "naam='" + naam + '\'' +
+                ", beschrijving='" + beschrijving + '\'' +
+                ", beredingstijd='" + beredingstijd + '\'' +
+                ", bereidingswijze='" + bereidingswijze + '\'' +
+                ", favoriet=" + favoriet +
+                ", categorie='" + categorie + '\'' +
+                ", alleIngredienten=" + alleIngredienten +
+                '}';
     }
 }

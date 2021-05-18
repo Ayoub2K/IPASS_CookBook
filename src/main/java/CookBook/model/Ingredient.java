@@ -15,7 +15,7 @@ public class Ingredient {
         return naam;
     }
 
-    public int getCalorieen(){
+    public int berekenCalorieen(){
         return (calper100 / 100) * hoeveelheid;
     }
 
@@ -25,5 +25,14 @@ public class Ingredient {
 
     public void setHoeveelheid(int nieuweHoeveelheid){
         this.hoeveelheid = nieuweHoeveelheid;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "naam='" + naam + '\'' +
+                ", hoeveelheid=" + hoeveelheid +
+                ", calper100=" + calper100 +
+                '}';
     }
 }

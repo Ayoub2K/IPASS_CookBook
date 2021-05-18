@@ -9,12 +9,14 @@ public class Book {
     private static Book my_CookBook = new Book();
     public static Book getBook() { return my_CookBook; }
 
-    public static void setMy_CookBook(Book book) {my_CookBook = book; }
-
     public List<Gerecht> getAlleGerechten() {return alleGerechten; }
 
-    public void addGerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, List<Ingredient> ingredienten){
-        alleGerechten.add(new Gerecht(naam, beschrijving, beredingstijd, bereidingswijze, categorie, ingredienten));
+    public void addGerecht(Gerecht gerecht){
+        alleGerechten.add(gerecht);
+    }
+
+    public Gerecht getGerecht(Gerecht gerecht){
+        return gerecht;
     }
 
     public void verwijderGerecht(String naam){
@@ -35,7 +37,7 @@ public class Book {
         return favorietenGerechten;
     }
 
-    public List<Gerecht> getGerechtCategorie(String categorie){
+    public List<Gerecht> getGerechtperCategorie(String categorie){
         List<Gerecht> GerechtenCategorie = new ArrayList<>();
         for(Gerecht gerecht : alleGerechten){
             if(gerecht.getCategorie().equals(categorie)){
