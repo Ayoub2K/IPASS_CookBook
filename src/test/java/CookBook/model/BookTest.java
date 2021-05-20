@@ -71,6 +71,6 @@ public class BookTest extends TestCase {
 
         book.addGerecht(ger5);
 
-        assertEquals(0.5, book.getGerecht(ger5).berekenPortie(1));
+        assertEquals(2.5, book.getGerecht(ger5).berekenPortie(5));
     }
 }
