@@ -1,9 +1,10 @@
 package CookBook.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gerecht {
+public class Gerecht  implements Serializable {
     private String naam;
     private String beschrijving;
     private String beredingstijd;
@@ -13,6 +14,7 @@ public class Gerecht {
     private double portie;
 
     private List<Ingredient> alleIngredienten = new ArrayList<>();
+    //equals>
 
     public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, int portie) {
         this.naam = naam;

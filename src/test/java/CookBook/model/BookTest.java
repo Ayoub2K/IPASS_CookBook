@@ -1,14 +1,15 @@
 package CookBook.model;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import junit.framework.TestCase;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BookTest extends TestCase {
+public class BookTest{
 
     Book book = Book.getBook();
 
-    @Test
-    public void testCat(){
+    @BeforeEach
+    public void setup(){
 
         Gerecht ger1 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1);
         ger1.voegIngredient("kip", 150, 100);
@@ -23,9 +24,6 @@ public class BookTest extends TestCase {
         book.addGerecht(ger1);
         book.addGerecht(ger2);
         book.addGerecht(ger3);
-
-        assertEquals( "[Gerecht{naam='vis met rijst', beschrijving='vis met rijst en saus', beredingstijd='20 min', bereidingswijze='kook rijst', favoriet=false, categorie='vis', alleIngredienten=[Ingredient{naam='vis', hoeveelheid=150, calper100=100}, Ingredient{naam='rijst', hoeveelheid=100, calper100=100}]}]"
-                , book.getGerechtperCategorie("vis").toString());
     }
 
     @Test

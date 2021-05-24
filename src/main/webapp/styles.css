@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    background: #eaeaea;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.row {
+    max-width: 1140px;
+    margin: auto;
+    width: 80%;
+}
+
+/*styling header*/
+#logo-main{
+    display: block;
+    margin: 20px auto;
+}
+
+header{
+    background: #ffffff;
+    padding-top: 1%;
+}
+
+navbar{
+    text-align: center;
+}
+
+.topnav {
+    overflow: hidden;
+    width: 80%;
+    max-width: 1140px;
+    margin: auto;
+    border-bottom: #d7d7d7 1px solid;
+}
+
+.topnav a {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #777;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 5px 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #e7e7e7;
+    color: #555;
+}
+
+/*styling list Gerechten*/
+
+.lijstGerechten{
+    list-style-type: none;
+    padding: 0;
+}
+
+.lijstGerechten > li{
+    padding: 20px 0;
+    border-bottom: #aaaaaa 1px solid;
+}
+
+.gerechtNaam{
+    font-weight: 900;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+
+
+
+
+

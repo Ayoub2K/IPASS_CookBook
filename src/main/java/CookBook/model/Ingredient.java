@@ -1,6 +1,8 @@
 package CookBook.model;
 
-public class Ingredient {
+import java.io.Serializable;
+
+public class Ingredient  implements Serializable {
     private String naam;
     private int hoeveelheid;
     private int calper100;
