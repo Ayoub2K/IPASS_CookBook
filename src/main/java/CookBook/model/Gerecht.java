@@ -7,7 +7,7 @@ import java.util.List;
 public class Gerecht  implements Serializable {
     private String naam;
     private String beschrijving;
-    private String beredingstijd;
+    private String bereidingstijd;
     private String bereidingswijze;
     private boolean favoriet;
     private String categorie;
@@ -16,19 +16,19 @@ public class Gerecht  implements Serializable {
     private List<Ingredient> alleIngredienten = new ArrayList<>();
     //equals>
 
-    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, int portie) {
+    public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, int portie) {
         this.naam = naam;
         this.beschrijving = beschrijving;
-        this.beredingstijd = beredingstijd;
+        this.bereidingstijd = bereidingstijd;
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
         this.portie = portie;
     }
 
-    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, int portie, List<Ingredient> ingredientenList) {
+    public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, int portie, List<Ingredient> ingredientenList) {
         this.naam = naam;
         this.beschrijving = beschrijving;
-        this.beredingstijd = beredingstijd;
+        this.bereidingstijd = bereidingstijd;
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
         this.portie = portie;
@@ -85,12 +85,12 @@ public class Gerecht  implements Serializable {
         return aantalPorties / portie;
     }
 
-    public String getBeredingstijd() {
-        return beredingstijd;
+    public String getBereidingstijd() {
+        return bereidingstijd;
     }
 
-    public void setBeredingstijd(String beredingstijd) {
-        this.beredingstijd = beredingstijd;
+    public void setBereidingstijd(String bereidingstijd) {
+        this.bereidingstijd = bereidingstijd;
     }
 
     public String getBereidingswijze() {
@@ -122,7 +122,7 @@ public class Gerecht  implements Serializable {
         return "Gerecht{" +
                 "naam='" + naam + '\'' +
                 ", beschrijving='" + beschrijving + '\'' +
-                ", beredingstijd='" + beredingstijd + '\'' +
+                ", bereidingstijd='" + bereidingstijd + '\'' +
                 ", bereidingswijze='" + bereidingswijze + '\'' +
                 ", favoriet=" + favoriet +
                 ", categorie='" + categorie + '\'' +

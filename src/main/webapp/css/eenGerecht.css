@@ -1,0 +1,36 @@
+.gerechtBlok{
+    max-width: 1140px;
+    margin: 50px auto;
+    width: 80%;
+    background: #ffffff;
+    border-radius: 15px;
+    border: #a5a5a5 1px solid;
+    padding: 20px;
+
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.gerechtHeader{
+    text-align: center;
+}
+.gerechtNaam{
+    font-size: 27px;
+}
+
+.gerechtLinks{
+    float: left;
+    padding-left: 3%;
+    width: calc(75% - 3%);
+}
+
+.gerechtRechts{
+    float: left;
+    width: calc(25% - 24px);
+    background: #eaeaea ;
+    padding: 10px;
+    border-radius: 15px;
+    border: #a5a5a5 1px solid;
+}
+

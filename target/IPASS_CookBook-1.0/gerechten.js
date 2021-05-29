@@ -1,12 +1,12 @@
 import GerechtenService from '../service/Gerechten_service.js';
-import gerechten_service from "./service/Gerechten_service.js";
 
 function addGerechtList(key, values){
-    const template = document.querySelector('#subject-lijstGerechten')
+    const template = document.querySelector('#lijstGerechten')
     const myTemplateClone = template.content.cloneNode(true);
 
     myTemplateClone.querySelector(".gerechtNaam").textContent = values.naam;
-    myTemplateClone.querySelector(".beschrijving").textContent = values.beschrijving;
+    myTemplateClone.querySelector(".gerechtBeschrijving").textContent = values.beschrijving;
+    myTemplateClone.querySelector(".gerechtLink").setAttribute("href", "gerecht.html?"+ values.naam)
     switch (values.categorie){
         case "vega":
             myTemplateClone.querySelector(".gerechtImg").setAttribute("src", "Resources/icons/vega.png" );

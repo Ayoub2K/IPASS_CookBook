@@ -28,7 +28,7 @@ public class Book  implements Serializable {
         Ingredienten3.add(new Ingredient("Rijst", 100, 200));
         Ingredienten3.add(new Ingredient("saus", 50, 100));
 
-        alleGerechten.add(new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1, Ingredienten1));
+        alleGerechten.add(new Gerecht("kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1, Ingredienten1));
         alleGerechten.add(new Gerecht("vis met rijst", "vis met rijst en saus", "23 min", "kook rijst", "vis", 2, Ingredienten2));
         alleGerechten.add(new Gerecht("tofu met rijst", "tofu met rijst en saus", "15 min", "kook rijst", "vega", 1, Ingredienten3));
 

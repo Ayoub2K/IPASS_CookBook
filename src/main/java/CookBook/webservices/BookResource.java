@@ -5,6 +5,7 @@ import CookBook.model.Gerecht;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -15,7 +16,7 @@ import java.util.List;
 public class BookResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response countries(){
+    public Response gerechten(){
         Book book = Book.getBook();
         List<Gerecht> alleGerechten = book.getAlleGerechten();
 
@@ -24,6 +25,13 @@ public class BookResource {
         }else {
             return Response.ok(Book.getBook().getAlleGerechten()).build();
         }
+    }
+
+    @GET
+    @Path("{naam}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response gerecht(@PathParam("naam") String naam){
+        return Response.ok(Book.getBook().getGerechtByName(naam)).build();
     }
 
 }
