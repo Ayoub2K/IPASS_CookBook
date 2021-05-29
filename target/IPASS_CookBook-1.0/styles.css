@@ -1,13 +1,13 @@
 body {
     margin: 0;
     background: #eaeaea;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .row {
     max-width: 1140px;
     margin: auto;
     width: 80%;
-    height: 3300px;
 }
 
 /*styling header*/
@@ -15,7 +15,6 @@ body {
     display: block;
     margin: 20px auto;
 }
-
 
 header{
     background: #ffffff;
@@ -55,3 +54,43 @@ navbar{
     background-color: #e7e7e7;
     color: #555;
 }
+
+/*styling list Gerechten*/
+
+.gerechtImg{
+    max-height: 55px;
+    float: left;
+    margin-right: 10px;
+}
+
+.gerecht{
+    list-style-type: none;
+    padding: 20px 0;
+    border-bottom: #aaaaaa 1px solid;
+}
+
+.beschrijving{
+    font-size: 18px;
+}
+
+.gerechtNaam{
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+
+
+
+
+

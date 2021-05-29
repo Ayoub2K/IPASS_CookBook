@@ -25,6 +25,16 @@ public class Gerecht  implements Serializable {
         this.portie = portie;
     }
 
+    public Gerecht(String naam, String beschrijving, String beredingstijd, String bereidingswijze, String categorie, int portie, List<Ingredient> ingredientenList) {
+        this.naam = naam;
+        this.beschrijving = beschrijving;
+        this.beredingstijd = beredingstijd;
+        this.bereidingswijze = bereidingswijze;
+        this.categorie = categorie;
+        this.portie = portie;
+        this.alleIngredienten = ingredientenList;
+    }
+
     public String getNaam(){
         return naam;
     }

@@ -13,8 +13,25 @@ public class Book  implements Serializable {
     public static void setBook(Book book) {my_CookBook = book;}
 
     private Book(){
-        alleGerechten.add(new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1));
-//        getBook().getGerechtByName("Kip met rijst").voegIngredient("kip", 150, 100);
+        ArrayList<Ingredient> Ingredienten1 = new ArrayList<>();
+        Ingredienten1.add(new Ingredient("kip", 100, 100));
+        Ingredienten1.add(new Ingredient("Rijst", 100, 200));
+        Ingredienten1.add(new Ingredient("saus", 50, 100));
+
+        ArrayList<Ingredient> Ingredienten2 = new ArrayList<>();
+        Ingredienten2.add(new Ingredient("vis", 100, 90));
+        Ingredienten2.add(new Ingredient("Rijst", 100, 200));
+        Ingredienten2.add(new Ingredient("saus", 50, 100));
+
+        ArrayList<Ingredient> Ingredienten3 = new ArrayList<>();
+        Ingredienten3.add(new Ingredient("tofu", 100, 120));
+        Ingredienten3.add(new Ingredient("Rijst", 100, 200));
+        Ingredienten3.add(new Ingredient("saus", 50, 100));
+
+        alleGerechten.add(new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1, Ingredienten1));
+        alleGerechten.add(new Gerecht("vis met rijst", "vis met rijst en saus", "23 min", "kook rijst", "vis", 2, Ingredienten2));
+        alleGerechten.add(new Gerecht("tofu met rijst", "tofu met rijst en saus", "15 min", "kook rijst", "vega", 1, Ingredienten3));
+
     }
 
     public List<Gerecht> getAlleGerechten() {

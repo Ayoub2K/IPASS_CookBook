@@ -57,20 +57,36 @@ navbar{
 
 /*styling list Gerechten*/
 
-.lijstGerechten{
-    list-style-type: none;
-    padding: 0;
+.gerechtImg{
+    max-height: 55px;
+    float: left;
+    margin-right: 10px;
 }
 
-.lijstGerechten > li{
+.gerecht{
+    list-style-type: none;
     padding: 20px 0;
     border-bottom: #aaaaaa 1px solid;
 }
 
+.beschrijving{
+    font-size: 18px;
+}
+
 .gerechtNaam{
     font-weight: 900;
-    font-size: 18px;
+    font-size: 20px;
     padding-bottom: 5px;
+}
+
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
 }
 
 
