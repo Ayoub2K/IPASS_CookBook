@@ -1,0 +1,13 @@
+.GerechtToevoegenBlok{
+    max-width: 1140px;
+    margin: 50px auto;
+    width: 80%;
+    background: #ffffff;
+    border-radius: 15px;
+    border: #a5a5a5 1px solid;
+    padding: 20px;
+
+    content: "";
+    display: table;
+    clear: both;
+}

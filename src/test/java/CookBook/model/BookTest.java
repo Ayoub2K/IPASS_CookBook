@@ -2,6 +2,8 @@ package CookBook.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BookTest{
@@ -11,9 +13,10 @@ public class BookTest{
     @BeforeEach
     public void setup(){
 
-        Gerecht ger1 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1);
-        ger1.voegIngredient("kip", 150, 100);
-        ger1.voegIngredient("rijst", 100, 100);
+        Gerecht ger1 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1,
+                new ArrayList<Ingredient>() {
+                    {new Ingredient("kip",150,100); new Ingredient("rijst", 100, 100);}
+                });
         Gerecht ger2 = new Gerecht("vis met rijst", "vis met rijst en saus", "20 min", "kook rijst", "vis",1 );
         ger2.voegIngredient("vis", 150, 100);
         ger2.voegIngredient("rijst", 100, 100);
@@ -40,9 +43,10 @@ public class BookTest{
 
     @Test
     public void testFav(){
-        Gerecht ger1 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1);
-        ger1.voegIngredient("kip", 150, 100);
-        ger1.voegIngredient("rijst", 100, 100);
+        Gerecht ger1 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", 1,
+                new ArrayList<Ingredient>() {
+                    {new Ingredient("kip",150,100); new Ingredient("rijst", 100, 100);}
+                });
 
         book.getGerecht(ger1).setFavoriet(true);
         assertEquals(true, book.getGerecht(ger1).isFavoriet());

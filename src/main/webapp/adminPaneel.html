@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CookBook</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/adminPaneel.css">
+  <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
+  <script type="module" src="adminPaneel.js"></script>
+</head>
+<body>
+<header>
+  <img id="logo-main" src="Resources/logo1.png" width="200" alt="Logo">
+  <navbar>
+    <div class="topnav">
+      <a href="/">Startpagina</a>
+      <a href="gerechten.html">Gerechten</a>
+      <a href="#">Favorieten</a>
+      <a class="active" href="adminPaneel.html">admin paneel</a>
+    </div>
+  </navbar>
+</header>
+<main>
+  <div class="GerechtToevoegenBlok">
+    <form id="POSTgerechtForm">
+      <label for="naam">Gerecht naam: <input type="text" id="naam" name="naam" required/></label><br/>
+      <label for="beschrijving">beschrijving: <input type="text" id="beschrijving" name="beschrijving" required/></label><br/>
+      <label for="bereidingstijd">bereidingstijd: <input type="text" id="bereidingstijd" name="bereidingstijd" required/></label><br/>
+      <label for="bereidingswijze">bereidingswijze: <input type="text" id="bereidingswijze" name="bereidingswijze" required/></label><br/>
+      <label for="categorie">categorie: <input type="text" id="categorie" name="categorie" required/></label><br/>
+      <label for="portie">aantal porties: <input type="number" min="1" id="portie" name="portie" required/></label><br/>
+      <input type="button" id="submit" value="Voeg toe">
+    </form>
+  </div>
+</main>
+
+</body>
+</html>

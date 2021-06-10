@@ -1,5 +1,3 @@
-const CONFLICT_ERROR = 409;
-
 export default class gerechten_service{
 
     static getGerechten() {
@@ -13,7 +11,6 @@ export default class gerechten_service{
             .catch(error => {
                 console.log("gerecht niet gevonden")
             })
-
     }
 
 }

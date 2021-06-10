@@ -14,7 +14,8 @@ public class Gerecht  implements Serializable {
     private double portie;
 
     private List<Ingredient> alleIngredienten = new ArrayList<>();
-    //equals>
+
+    //equals
 
     public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, int portie) {
         this.naam = naam;
