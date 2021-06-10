@@ -34,6 +34,18 @@ public class Ingredient  implements Serializable {
     }
 
     @Override
+    public boolean equals(Object andereObject) {
+        if (andereObject.getClass().equals(Ingredient.class)) {
+            return ((Ingredient) andereObject).getNaam().equals(naam)
+                    && ((Ingredient) andereObject).getHoeveelheid() == hoeveelheid
+                    && ((Ingredient) andereObject).getCalper100() == calper100
+                    ;}
+        else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "Ingredient{" +
                 "naam='" + naam + '\'' +

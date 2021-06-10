@@ -3,6 +3,7 @@ package CookBook.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class Gerecht  implements Serializable {
     private String naam;
@@ -15,24 +16,22 @@ public class Gerecht  implements Serializable {
 
     private List<Ingredient> alleIngredienten = new ArrayList<>();
 
-    //equals
-
-    public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, int portie) {
+    public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, String portie) {
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.bereidingstijd = bereidingstijd;
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
-        this.portie = portie;
+        this.portie = Integer.parseInt(portie);
     }
 
-    public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, int portie, List<Ingredient> ingredientenList) {
+    public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, String portie, List<Ingredient> ingredientenList) {
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.bereidingstijd = bereidingstijd;
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
-        this.portie = portie;
+        this.portie = Integer.parseInt(portie);
         this.alleIngredienten = ingredientenList;
     }
 
@@ -116,6 +115,30 @@ public class Gerecht  implements Serializable {
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    public double getPortie() {
+        return portie;
+    }
+
+    public void setPortie(double portie) {
+        this.portie = portie;
+    }
+
+    @Override
+    public boolean equals(Object andereObject) {
+        if (andereObject.getClass().equals(Gerecht.class)) {
+            return ((Gerecht) andereObject).getNaam().equals(naam)
+                    && ((Gerecht) andereObject).getCategorie().equals(categorie)
+                    && ((Gerecht) andereObject).getBereidingstijd().equals(bereidingstijd)
+                    && ((Gerecht) andereObject).getBereidingswijze().equals(bereidingswijze)
+                    && ((Gerecht) andereObject).getBeschrijving().equals(beschrijving)
+                    && ((Gerecht) andereObject).isFavoriet() == favoriet
+                    && ((Gerecht) andereObject).getPortie() == portie
+                    ;}
+        else {
+            return false;
+        }
     }
 
     @Override

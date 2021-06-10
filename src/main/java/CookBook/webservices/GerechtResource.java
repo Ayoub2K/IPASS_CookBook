@@ -34,14 +34,19 @@ public class GerechtResource {
     @POST
     @Path("gerecht")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response setGerecht(@FormParam("naam") String naam, @FormParam("beschrijving") String beschrijving, @FormParam("bereidingstijd") String bereidingstijd,
-                               @FormParam("bereidingswijze") String bereidingswijze, @FormParam("categorie") String categorie, @FormParam("portie") int portie){
-        Gerecht newGerecht = new Gerecht(naam, beschrijving, bereidingstijd, bereidingswijze, categorie, portie);
-        try{
-            return Response.ok(newGerecht).build();
-        }catch (Exception e){
-            return Response.status(Response.Status.CONFLICT).entity(new AbstractMap.SimpleEntry<>("error:", e.getMessage())).build();
-        }
-    }
+   // @Consumes(MediaType.APPLICATION_JSON)
+    public Response setGerecht(@FormParam("naam") String naam,
+                               @FormParam("beschrijving") String beschrijving,
+                               @FormParam("bereidingstijd") String bereidingstijd,
+                               @FormParam("bereidingswijze") String bereidingswijze,
+                               @FormParam("categorie") String categorie,
+                               @FormParam("portie") String portie){
 
+        Book book = Book.getBook();
+        Gerecht newGerecht = new Gerecht(naam, beschrijving, bereidingstijd, bereidingswijze, categorie, portie );
+
+        book.addGerecht(newGerecht);
+
+        return Response.ok(newGerecht).build();
+    }
 }
