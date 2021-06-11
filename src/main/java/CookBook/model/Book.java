@@ -55,6 +55,10 @@ public class Book  implements Serializable {
         return null;
     }
 
+    public boolean containsName(final String name){
+        return alleGerechten.stream().map(Gerecht::getNaam).filter(name::equals).findFirst().isPresent();
+    }
+
     public void verwijderGerecht(String naam){
         for(Gerecht gerecht : alleGerechten){
             if(gerecht.getNaam().equals(naam)){

@@ -10,11 +10,14 @@ document.querySelector('#submit').addEventListener("click", async function(){
    })
        .then((response) => {
            if (!response.ok) {
-               throw new Error(response.status);
+               alert("Er bestaat al een gerecht met die naam! \nkies aub een andere naam voor dit gerecht.")
            }
            return response;
        })
        .then(function (myjson){
            console.log(myjson)
-       });
+       })
+
+        .catch(error => console.log(error.message));
 });
+

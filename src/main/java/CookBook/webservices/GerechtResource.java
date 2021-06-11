@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 import java.util.AbstractMap;
 import java.util.List;
 
-@Path("gerechten/")
+@Path("gerechten")
 public class GerechtResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -25,28 +25,50 @@ public class GerechtResource {
     }
 
     @GET
-    @Path("{naam}")
+    @Path("/{naam}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getGerecht(@PathParam("naam") String naam){
         return Response.ok(Book.getBook().getGerechtByName(naam)).build();
     }
 
+//    @POST
+//    @Path("gerecht")
+//    @Produces(MediaType.APPLICATION_JSON)
+//   @Consumes(MediaType.APPLICATION_JSON)
+//    public Response setGerecht(@FormParam("naam") String naam,
+//                               @FormParam("beschrijving") String beschrijving,
+//                               @FormParam("bereidingstijd") String bereidingstijd,
+//                               @FormParam("bereidingswijze") String bereidingswijze,
+//                               @FormParam("categorie") String categorie,
+//                               @FormParam("portie") String portie){
+//
+//        Book book = Book.getBook();
+//        Gerecht newGerecht = new Gerecht(naam, beschrijving, bereidingstijd, bereidingswijze, categorie, portie );
+//
+//        book.addGerecht(newGerecht);
+//
+//        return Response.ok(newGerecht).build();
+//    }
+
     @POST
     @Path("gerecht")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
-   // @Consumes(MediaType.APPLICATION_JSON)
-    public Response setGerecht(@FormParam("naam") String naam,
-                               @FormParam("beschrijving") String beschrijving,
-                               @FormParam("bereidingstijd") String bereidingstijd,
-                               @FormParam("bereidingswijze") String bereidingswijze,
-                               @FormParam("categorie") String categorie,
-                               @FormParam("portie") String portie){
+    public Response createGerecht(@FormParam("naam") String nm,
+                                  @FormParam("beschrijving") String bs,
+                                  @FormParam("bereidingstijd") String bt,
+                                  @FormParam("bereidingswijze") String bw,
+                                  @FormParam("categorie") String ct,
+                                  @FormParam("portie") String pr) {
 
-        Book book = Book.getBook();
-        Gerecht newGerecht = new Gerecht(naam, beschrijving, bereidingstijd, bereidingswijze, categorie, portie );
+        Gerecht gerecht = new Gerecht(nm, bs, bt, bw, ct, pr);
 
-        book.addGerecht(newGerecht);
-
-        return Response.ok(newGerecht).build();
+        if (!Book.getBook().containsName(gerecht.getNaam())) {
+            Book.getBook().addGerecht(gerecht);
+            return Response.ok(gerecht).build();
+        } else {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
     }
+
 }
