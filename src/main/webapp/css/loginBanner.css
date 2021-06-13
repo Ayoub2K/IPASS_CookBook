@@ -1,0 +1,22 @@
+.loginBanner{
+    padding: 3px 0px;
+    width: 100%;
+    background-color: #6d6d6d;
+}
+
+.loginStatus{
+    margin-left: 25%;
+    font-size: 24px;
+    color: white;
+}
+
+#loguit{
+    background-color: #ac4242;
+    color: white;
+    padding: 7px;
+    margin-right: 25%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}

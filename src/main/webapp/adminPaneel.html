@@ -6,9 +6,15 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/adminPaneel.css">
   <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
+  <link rel="stylesheet" href="css/loginBanner.css">
+  <script type="module" src="loginBanner.js"></script>
   <script type="module" src="adminPaneel.js"></script>
 </head>
 <body>
+<div class="loginBanner">
+  <span class="loginStatus"> </span>
+  <button id="loguit">loguit</button>
+</div>
 <header>
   <img id="logo-main" src="Resources/logo1.png" width="200" alt="Logo">
   <navbar>
@@ -22,7 +28,7 @@
 </header>
 <main>
   <div class="GerechtToevoegenBlok">
-    <h3>Voeg gerecht toe</h3>
+    <h3>Gerecht toevoegen</h3>
     <form id="POSTgerechtForm">
       <label for="naam">Gerecht naam: <input type="text" id="naam" name="naam" required/></label><br/>
       <label for="beschrijving">beschrijving: <input type="text" id="beschrijving" name="beschrijving" required/></label><br/>
