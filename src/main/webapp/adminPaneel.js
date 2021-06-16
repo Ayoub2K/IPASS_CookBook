@@ -6,7 +6,7 @@ document.querySelector('#submit').addEventListener("click", async function(){
     const formData = new FormData(document.querySelector("#POSTgerechtForm"));
     const encData = new URLSearchParams(formData.entries());
 
-    fetch("restservices/gerechten/gerecht", {
+    fetch("restservices/gerechten", {
         method: 'POST',
         headers: UserService.setAuthHeader({}),
         body: encData,

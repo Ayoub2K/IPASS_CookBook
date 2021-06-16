@@ -19,7 +19,6 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response whoAmI(@Context SecurityContext ctx){
         Principal loggedInUser = ctx.getUserPrincipal();
-        System.out.println("login get");
         if(loggedInUser == null){
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
@@ -32,7 +31,6 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(@FormParam("name") String username, @FormParam("password") String password){
         HashMap<String, String> response = new HashMap<>();
-        System.out.println("login post");
 
         if(username.equals("admin") && password.equals("admin")){
             response.put("user", username);

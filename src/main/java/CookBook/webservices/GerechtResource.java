@@ -33,7 +33,7 @@ public class GerechtResource {
     }
 
     @POST
-    @Path("gerecht")
+    //@Path("gerecht")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @RolesAllowed("editor")
