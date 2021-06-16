@@ -5,7 +5,7 @@ document.querySelector("#loginKnop").addEventListener("click", e => {
     UserService.logIn(document.forms["login"].username.value, document.forms["login"].password.value)
         .then(u => {
             if (u != null) {
-                window.location = "/adminPaneel.html";
+                window.location = "/paneel.html";
             }
         })
         .catch(error => console.log(error.message));

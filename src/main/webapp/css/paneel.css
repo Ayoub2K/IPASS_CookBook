@@ -1,0 +1,21 @@
+.adminAction{
+    float: left;
+    width: 31.50%;
+    margin: 10px;
+    height: 300px;
+    background: #5fad61;
+    text-align: center;
+    line-height: 280px;
+    font-size: 18px;
+    color: white;
+    font-weight: 450;
+    border-radius: 10px;
+    border: #245226;
+}
+
+.inProgress{
+    background: #8b8b8b;
+}
+.row{
+    margin-top: 200px;
+}

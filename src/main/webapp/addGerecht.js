@@ -18,7 +18,7 @@ document.querySelector('#submit').addEventListener("click", async function(){
                return response;
            }else {
                alert("gerecht is toegevoegd.");
-               window.location = "adminPaneel.html";
+               window.location = "addGerecht.html";
                return response;
            }
        })
