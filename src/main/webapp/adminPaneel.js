@@ -1,4 +1,3 @@
-import GerechtenService from './service/Gerechten_service.js';
 import UserService from "./service/user_service.js";
 const form = document.querySelector("#POSTgerechtForm")
 UserService.requireUser()
