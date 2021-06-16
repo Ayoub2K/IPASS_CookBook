@@ -14,7 +14,6 @@ function updatePagina(values) {
     myTemplateClone.querySelector(".calorieen").textContent = values.totaalCalorieen;
 
     for(let i = 0; i < values.alleIngredienten.length; i++){
-        console.log(values.alleIngredienten[i])
         myTemplateClone.querySelector(".ingredienten").innerHTML += values.alleIngredienten[i].naam + " " + values.alleIngredienten[i].hoeveelheid + "gr <br>";
     }
 

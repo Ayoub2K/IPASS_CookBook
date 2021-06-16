@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CookBook</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/adminPaneel.css">
+  <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
+  <link rel="stylesheet" href="css/loginBanner.css">
+  <script type="module" src="loginBanner.js"></script>
+  <script type="module" src="addGerechtObject.js"></script>
+</head>
+<body>
+<div class="loginBanner">
+  <span class="loginStatus"> </span>
+  <button id="loguit">loguit</button>
+</div>
+<header>
+  <img id="logo-main" src="Resources/logo1.png" width="200" alt="Logo">
+  <navbar>
+    <div class="topnav">
+      <a href="/">Startpagina</a>
+      <a href="gerechten.html">Gerechten</a>
+      <a href="#">Favorieten</a>
+      <a href="adminPaneel.html">admin paneel</a>
+    </div>
+  </navbar>
+</header>
+<main>
+  <div class="GerechtToevoegenBlok">
+    <h3>Gerecht toevoegen</h3>
+    <form id="POSTgerechtObjectForm">
+      <label for="naam">Gerecht naam: <input type="text" id="naam" name="naam" required/></label><br/>
+      <label for="beschrijving">beschrijving: <input type="text" id="beschrijving" name="beschrijving" required/></label><br/>
+      <label for="bereidingstijd">bereidingstijd: <input type="text" id="bereidingstijd" name="bereidingstijd" required/></label><br/>
+      <label for="bereidingswijze">bereidingswijze: <input type="text" id="bereidingswijze" name="bereidingswijze" required/></label><br/>
+      <label for="categorie">categorie:</label>
+      <select id="categorie" name="categorie">
+        <option value="vlees">vlees</option>
+        <option value="vis">vis</option>
+        <option value="vega">vegetarisch</option>
+        <option value="anders">anders</option>
+      </select><br/>
+      <label for="portie">aantal porties: <input type="number" min="1" id="portie" name="portie" value="1" required/></label><br/>
+
+      <h3>Ingredienten</h3>
+        <label for="naamIngr1">naam: <input type="text" id="naamIngr1" name="naamIngr1" required/></label><br/>
+        <label for="hoeveelheid1">hoeveelheid: <input type="number" min="1" id="hoeveelheid1" value="1" name="hoeveelheid1" required/></label><br/>
+        <label for="calper1">calorien per 100 gr/ml: <input type="number" min="1" id="calper1" value="1" name="calper1" required/></label><br/>
+      <hr style="border-top: 3px dotted #bbb;">
+
+      <label for="naamIngr2">naam: <input type="text" id="naamIngr2" name="naamIngr2" required/></label><br/>
+      <label for="hoeveelheid2">hoeveelheid: <input type="number" min="1" id="hoeveelheid2" value="1" name="hoeveelheid2" required/></label><br/>
+      <label for="calper2">calorien per 100 gr/ml: <input type="number" min="1" id="calper2" value="1" name="calper2" required/></label><br/>
+      <hr style="border-top: 3px dotted #bbb;">
+
+      <label for="naamIngr3">naam: <input type="text" id="naamIngr3" name="naamIngr3" required/></label><br/>
+      <label for="hoeveelheid3">hoeveelheid: <input type="number" min="1" id="hoeveelheid3" value="1" name="hoeveelheid3" required/></label><br/>
+      <label for="calper3">calorien per 100 gr/ml: <input type="number" min="1" id="calper3" value="1" name="calper3" required/></label><br/>
+
+      <input type="button" id="submitObject" value="Voeg toe">
+    </form>
+  </div>
+</main>
+
+</body>
+</html>

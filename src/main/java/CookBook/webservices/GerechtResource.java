@@ -2,6 +2,9 @@ package CookBook.webservices;
 
 import CookBook.model.Book;
 import CookBook.model.Gerecht;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
@@ -33,7 +36,6 @@ public class GerechtResource {
     }
 
     @POST
-    //@Path("gerecht")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @RolesAllowed("editor")
@@ -54,4 +56,19 @@ public class GerechtResource {
         }
     }
 
+    @POST
+    @Path("object")
+    public Response createGerechtObject(String body) throws JsonProcessingException {
+
+        JsonNode jsonNode = new ObjectMapper().readTree(body);
+        System.out.println(jsonNode);
+        String naam = jsonNode.get("naam").asText();
+
+        if (!Book.getBook().containsName(naam)) {
+            Book.getBook().createGerecht(jsonNode);
+            return Response.ok().build();
+        } else {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
+    }
 }

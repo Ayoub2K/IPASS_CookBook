@@ -1,5 +1,8 @@
 package CookBook.model;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
+import javax.json.JsonArray;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,35 @@ public class Book  implements Serializable {
         alleGerechten.add(new Gerecht("tofu met rijst", "tofu met rijst en saus", "15 min", "kook rijst", "vega", "1", Ingredienten3));
 
     }
+
+    public void createGerecht(JsonNode jsonNode) {
+        String naam = jsonNode.get("naam").asText();
+        String beschrijving = jsonNode.get("beschrijving").asText();
+        String bereidingstijd = jsonNode.get("bereidingstijd").asText();
+        String bereidingswijze = jsonNode.get("bereidingswijze").asText();
+        String categorie = jsonNode.get("categorie").asText();
+        String portie = jsonNode.get("portie").asText();
+
+        JsonNode list = jsonNode.get("alleIngredienten");
+
+        ArrayList<Ingredient> ingredienten = new ArrayList();
+        int it = 0;
+
+        for (JsonNode listItem : list){
+
+            String naamIngr = list.get(it).get("naam").asText();
+            int hoeveelheid = list.get(it).get("hoeveelheid").asInt();
+            int calper100 = list.get(it).get("calper100").asInt();
+
+            ingredienten.add(new Ingredient(naamIngr, hoeveelheid, calper100));
+
+            it += 1;
+        }
+
+
+        addGerecht(new Gerecht(naam, beschrijving, bereidingstijd, bereidingswijze, categorie, portie, ingredienten));
+    }
+
 
     public List<Gerecht> getAlleGerechten() {
         return alleGerechten;
