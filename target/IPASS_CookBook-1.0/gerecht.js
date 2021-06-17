@@ -7,11 +7,11 @@ function updatePagina(values) {
     const myTemplateClone = template.content.cloneNode(true);
 
     myTemplateClone.querySelector(".gerechtNaam").textContent = values.naam;
-    myTemplateClone.querySelector(".categorie").textContent = values.categorie;
-    myTemplateClone.querySelector(".beschrijving").textContent = values.beschrijving;
-    myTemplateClone.querySelector(".bereidingstijd").textContent = values.bereidingstijd;
-    myTemplateClone.querySelector(".bereidingswijze").textContent = values.bereidingswijze;
-    myTemplateClone.querySelector(".calorieen").textContent = values.totaalCalorieen;
+    myTemplateClone.querySelector(".categorie").textContent = "categorie: " + values.categorie;
+    myTemplateClone.querySelector(".beschrijving").textContent = "beschrijving: " + values.beschrijving;
+    myTemplateClone.querySelector(".bereidingstijd").textContent = "bereidingstijd: " + values.bereidingstijd;
+    myTemplateClone.querySelector(".bereidingswijze").textContent = "bereidingswijze: " + values.bereidingswijze;
+    myTemplateClone.querySelector(".calorieen").textContent = "calorieen: " + values.totaalCalorieen;
 
     for(let i = 0; i < values.alleIngredienten.length; i++){
         myTemplateClone.querySelector(".ingredienten").innerHTML += values.alleIngredienten[i].naam + " " + values.alleIngredienten[i].hoeveelheid + "gr <br>";
