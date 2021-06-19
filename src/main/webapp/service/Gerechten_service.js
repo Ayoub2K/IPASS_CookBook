@@ -13,4 +13,30 @@ export default class gerechten_service{
             })
     }
 
+    static deleteGerecht(naam){
+        return fetch(`/restservices/gerechten/${naam}`,{ method : "DELETE"})
+            .then(function (response){
+                if( response.ok ) {
+                    console.log("Gerecht is verwijderd")
+                }
+                else{ alert("Gerecht niet gevonden 1")}
+            })
+            .catch(error => {
+                alert("Gerecht niet gevonden 2")
+            })
+    }
+
+    static deleteIngredient(gerechtNaam, ingredientNaam){
+        return fetch(`/restservices/gerechten/${gerechtNaam}/${ingredientNaam}`,{ method : "DELETE"})
+            .then(function (response){
+                if( response.ok ) {
+                    console.log("Ingredient is verwijderd")
+                }
+                else{ alert("Ingredient niet gevonden 1")}
+            })
+            .catch(error => {
+                alert("Ingredient niet gevonden 2")
+            })
+    }
+
 }

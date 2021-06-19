@@ -27,4 +27,3 @@ document.querySelector('#submit').addEventListener("click", async function(){
        })
         .catch(error => console.log(error.message));
 });
-

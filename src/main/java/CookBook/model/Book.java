@@ -2,7 +2,6 @@ package CookBook.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import javax.json.JsonArray;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -91,12 +90,14 @@ public class Book  implements Serializable {
         return alleGerechten.stream().map(Gerecht::getNaam).filter(name::equals).findFirst().isPresent();
     }
 
-    public void verwijderGerecht(String naam){
+    public boolean verwijderGerecht(String naam){
         for(Gerecht gerecht : alleGerechten){
             if(gerecht.getNaam().equals(naam)){
                 alleGerechten.remove(gerecht);
+                return true;
             }
         }
+        return false;
     }
 
     public List<Gerecht> getFavorieten(){

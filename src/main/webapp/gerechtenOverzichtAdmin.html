@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CookBook</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
+  <link rel="stylesheet" href="css/loginBanner.css">
+  <link rel="stylesheet" href="css/gerechtenOverzichtAdmin.css">
+  <script type="module" src="loginBanner.js"></script>
+  <script type="module" src="service/Gerechten_service.js"></script>
+  <script type="module" src="gerechtenOverzichtAdmin.js"></script>
+</head>
+<body>
+<div class="loginBanner">
+  <span class="loginStatus"> </span>
+  <button id="loguit">loguit</button>
+</div>
+<header>
+  <img id="logo-main" src="Resources/logo1.png" width="200" alt="Logo">
+  <navbar>
+    <div class="topnav">
+      <a href="index.html">Startpagina</a>
+      <a href="gerechten.html">Gerechten</a>
+      <a href="#">Favorieten</a>
+      <a class="active" href="paneel.html">admin paneel</a>
+    </div>
+  </navbar>
+</header>
+<main>
+  <div class="row">
+    <ul class="gerechtenlijst">
+    </ul>
+    <template id="lijstGerechten">
+      <li class="gerecht">
+          <img class="gerechtImg">
+          <div class="gerechtNaam divWidth">gerecht 1</div>
+          <div class="gerechtBeschrijving divWidth">beschrijving</div>
+          <div class="functieButtons">
+            <button class="addIngredient">Ingredient toevoegen</button>
+            <button class="bewerkGerecht">Bewerk Gerecht</button>
+            <button class="deleteButton">Verwijder</button>
+          </div>
+      </li>
+    </template>
+
+    <dialog id="addIngredientDialog">
+      <div class="dialog">
+        <div class="content"></div>
+        <button class="close">Sluiten</button>
+      </div>
+    </dialog>
+
+  </div>
+</main>
+</div>
+</body>
+</html>

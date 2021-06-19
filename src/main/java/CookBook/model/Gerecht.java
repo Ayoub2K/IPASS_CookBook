@@ -55,6 +55,14 @@ public class Gerecht  implements Serializable {
         return favoriet;
     }
 
+    public void bewerkGerecht( String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, String portie){
+        this.beschrijving = beschrijving;
+        this.bereidingstijd = bereidingstijd;
+        this.bereidingswijze = bereidingswijze;
+        this.categorie =categorie;
+        this.portie = Integer.parseInt(portie);
+    }
+
     public List<Ingredient> getAlleIngredienten() {return alleIngredienten; }
 
     public void voegIngredient(String naam, int hoeveelheid, int calper100){
@@ -70,15 +78,16 @@ public class Gerecht  implements Serializable {
         }
     }
 
+
     //Verwijder Ingredient uit dit recept
-    public void verwijderIngredient(String naam){
+    public Boolean verwijderIngredient(String naam){
         for (Ingredient ingredient : alleIngredienten){
             if (ingredient.getNaam().equals(naam)){
                 alleIngredienten.remove(ingredient);
-            }else {
-                System.out.println(ingredient);
+                return true;
             }
         }
+        return false;
     }
 
     public double berekenPortie(int aantalPorties){

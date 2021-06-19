@@ -1,7 +1,7 @@
 .adminAction{
     float: left;
-    width: 31.50%;
-    margin: 10px;
+    width: 46%;
+    margin: 1%;
     height: 300px;
     background: #5fad61;
     text-align: center;
@@ -13,8 +13,8 @@
     border: #245226;
 }
 
-.inProgress{
-    background: #8b8b8b;
+.bewerk{
+    background: #ea8436;
 }
 .row{
     margin-top: 100px;

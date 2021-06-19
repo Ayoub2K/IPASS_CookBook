@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CookBook</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/adminPaneel.css">
+    <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
+    <link rel="stylesheet" href="css/loginBanner.css">
+    <script type="module" src="loginBanner.js"></script>
+    <script type="module" src="gerechtBewerken.js"></script>
+</head>
+<body>
+<div class="loginBanner">
+    <span class="loginStatus"> </span>
+    <button id="loguit">loguit</button>
+</div>
+<header>
+    <img id="logo-main" src="Resources/logo1.png" width="200" alt="Logo">
+    <navbar>
+        <div class="topnav">
+            <a href="/">Startpagina</a>
+            <a href="gerechten.html">Gerechten</a>
+            <a href="#">Favorieten</a>
+            <a class="active" href="paneel.html">admin paneel</a>
+        </div>
+    </navbar>
+</header>
+<main>
+    <div class="GerechtToevoegenBlok">
+        <h3>Gerecht Bewerken</h3>
+        <form id="PUTgerechtForm">
+            <label for="naam">Gerecht naam: <input type="text" id="naam" name="naam" disabled/></label><br/>
+            <label for="beschrijving">beschrijving: <input type="text" id="beschrijving" name="beschrijving" required/></label><br/>
+            <label for="bereidingstijd">bereidingstijd: <input type="text" id="bereidingstijd" name="bereidingstijd" required/></label><br/>
+            <label for="bereidingswijze">bereidingswijze: <input type="text" id="bereidingswijze" name="bereidingswijze" required/></label><br/>
+            <label for="categorie">categorie:</label>
+            <select id="categorie" name="categorie">
+                <option value="vlees">vlees</option>
+                <option value="vis">vis</option>
+                <option value="vega">vegetarisch</option>
+                <option value="anders">anders</option>
+            </select><br/>
+            <label for="portie">aantal porties: <input type="number" min="1" id="portie" name="portie" value="1" required/></label><br/>
+            <input type="button" id="submitPUT" value="Bewerk">
+        </form>
+
+        <h3>Ingredienten</h3>
+
+        <ul class="ingredientenlijst">
+        </ul>
+        <template id="lijstIngredienten">
+            <li class="Ingredient">
+                <span class="Ingredientnaam"></span>
+                <span class="hoeveelheid"></span>
+                <span class="calsper"></span>
+                <span class="delete"></span>
+            </li>
+        </template>
+    </div>
+</main>
+
+</body>
+</html>

@@ -60,6 +60,21 @@ label{
     background-color: #245226;
 }
 
+#submitPUT{
+    width: 100%;
+    background-color: #ea8436;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submitPUT:hover {
+    background-color: #97521d;
+}
+
 .closebtn {
     margin-left: 15px;
     color: white;

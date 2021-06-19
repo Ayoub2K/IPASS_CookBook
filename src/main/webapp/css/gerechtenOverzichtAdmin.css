@@ -1,0 +1,40 @@
+.divWidth{
+    display: inline-block;
+}
+.gerecht{
+    padding: 35px;
+}
+.functieButtons{
+    top: 20px !important;
+    display: inline-block;
+    float: right;
+    width: auto;
+}
+.gerechtNaam{
+    width: 50%;
+}
+.gerechtBeschrijving{
+    width: 50%;
+}
+
+.addIngredient{
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    background: #5fad61;
+}
+
+.bewerkGerecht{
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    background: #ea8436;
+}
+
+.deleteButton {
+    width: auto;
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    background: #ea3636;
+}
