@@ -62,7 +62,7 @@ label{
 
 #submitPUT{
     width: 100%;
-    background-color: #ea8436;
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -72,7 +72,7 @@ label{
 }
 
 #submitPUT:hover {
-    background-color: #97521d;
+    background-color: #245226;
 }
 
 .closebtn {

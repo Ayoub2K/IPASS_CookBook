@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/adminPaneel.css">
     <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
     <link rel="stylesheet" href="css/loginBanner.css">
+    <link rel="stylesheet" href="css/gerechtenOverzichtAdmin.css">
     <script type="module" src="loginBanner.js"></script>
     <script type="module" src="gerechtBewerken.js"></script>
 </head>
@@ -54,9 +55,18 @@
                 <span class="Ingredientnaam"></span>
                 <span class="hoeveelheid"></span>
                 <span class="calsper"></span>
+                <button id="bewerkHoeveelheid">wijzig hoeveelheid</button>
                 <span class="delete"></span>
             </li>
         </template>
+
+        <dialog id="wijzigIngredient">
+            <div class="dialogIngr">
+                <div class="contentIngr"></div>
+                <button class="close">Sluiten</button>
+            </div>
+        </dialog>
+
     </div>
 </main>
 

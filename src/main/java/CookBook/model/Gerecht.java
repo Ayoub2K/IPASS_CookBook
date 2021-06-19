@@ -47,6 +47,10 @@ public class Gerecht  implements Serializable {
         return totaalCal;
     }
 
+    public Ingredient getIngredientbyName(String ingredient){
+        return alleIngredienten.parallelStream().filter(e -> e.getNaam().equals(ingredient)).findFirst().orElse(null);
+    }
+
     public void setFavoriet(boolean fav){
         this.favoriet = fav;
     }

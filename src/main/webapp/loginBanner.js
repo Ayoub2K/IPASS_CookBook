@@ -5,7 +5,6 @@ const loginStatus = document.querySelector(".loginStatus");
 const loginBanner = document.querySelector(".loginBanner");
 
 function updateBanner(status){
-    console.log(status)
     if (status == null){
         loginBanner.style.display = "none";
     }else {

@@ -22,13 +22,17 @@
     font-weight: bold;
     color: white;
     background: #5fad61;
+    border: #5fad61 1px solid;
+    border-radius: 5px;
 }
 
 .bewerkGerecht{
     padding: 15px;
     font-weight: bold;
     color: white;
-    background: #ea8436;
+    background: #ff791a;
+    border: #a05527 1px solid;
+    border-radius: 5px;
 }
 
 .deleteButton {
@@ -37,4 +41,68 @@
     font-weight: bold;
     color: white;
     background: #ea3636;
+    border: #8d2525 1px solid;
+    border-radius: 5px;
+}
+
+#addIngredientDialog{
+    padding: 20px 50px 50px 50px;
+    border: #5fad61 2px solid;
+    border-radius: 5px;
+}
+
+#addIngredientDialog > .dialog > .content > form> button {
+    margin-top: 15px;
+    width: 100%;
+    color: white;
+    padding: 5px;
+    background: #5fad61;
+    border: #5fad61 1px solid;
+    border-radius: 5px;
+}
+
+.close{
+    margin-top: 5px;
+    width: 100%;
+    color: white;
+    padding: 5px;
+    background: #ea3636;
+    border: #8d2525 1px solid;
+    border-radius: 5px;
+}
+
+#addIngredientDialog > .dialog > .content > form > label > input {
+    width: 97%;
+}
+
+span.delete > button {
+    margin: 5px 0;
+    width: auto;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+     background: #ea3636 !important;
+    border: #8d2525 1px solid;
+    border-radius: 5px;
+}
+
+#bewerkHoeveelheid{
+    margin: 5px 0;
+    width: auto;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    background: #5fad61 !important;
+    border: #5fad61 1px solid;
+    border-radius: 5px;
+}
+
+#PutIngredientForm > button{
+    margin-top: 15px;
+    width: 100%;
+    color: white;
+    padding: 5px;
+    background: #5fad61;
+    border: #5fad61 1px solid;
+    border-radius: 5px;
 }

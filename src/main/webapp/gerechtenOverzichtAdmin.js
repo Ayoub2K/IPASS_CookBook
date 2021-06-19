@@ -11,11 +11,13 @@ function addIngredientDialog(data) {
     FormNode.innerHTML = "<h2> Voeg ingredient toe </h2>"
     FormNode.setAttributeNode(formid)
 
+    const br = document.createElement("br")
+
     //naaminput
     const naamLabel = document.createElement('label');
     const naamfor = document.createAttribute("for");
     naamfor.value = "naam";
-    naamLabel.innerHTML = "</br> naam: "
+    naamLabel.innerHTML = "</br> naam ingredient: "
     naamLabel.setAttributeNode(naamfor)
 
     const naamInput = document.createElement('input');
@@ -74,13 +76,14 @@ function addIngredientDialog(data) {
     calperInput.setAttributeNode(calperInputname)
     calperlabel.append(calperInput)
     FormNode.append(calperlabel)
+    FormNode.append(br)
 
 
     //button
     const submitButton = document.createElement('button');
     submitButton.innerHTML = "verzend";
-    // const buttonID = document.createAttribute("id");
-    // buttonID.value= "submitIngredient";
+    const buttonID = document.createAttribute("id");
+    buttonID.value= "submitIngredient";
 
     FormNode.append(submitButton)
     dialogContent.append(FormNode);

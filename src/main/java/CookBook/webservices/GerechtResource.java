@@ -127,4 +127,19 @@ public class GerechtResource {
         }
     }
 
+    @PUT
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{gerechtNaam}/{ingredientNaam}")
+    public Response putIngredient(@PathParam("gerechtNaam") String gerechtNaam,
+                                  @PathParam("ingredientNaam") String ingredientNaam,
+                                  @FormParam("hoeveelheidIngr") int hoeveelheid) {
+        try{
+            Book.getBook().getGerechtByName(gerechtNaam).getIngredientbyName(ingredientNaam).setHoeveelheid(hoeveelheid);
+            return Response.ok().build();
+        }catch (Exception e){
+            return Response.status(Response.Status.CONFLICT).build();
+        }
+    }
+
     }
