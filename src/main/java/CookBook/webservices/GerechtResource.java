@@ -35,6 +35,18 @@ public class GerechtResource {
         return Response.ok(Book.getBook().getGerechtByName(naam)).build();
     }
 
+    @GET
+    @Path("favoriet/{naam}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response setFavoriet(@PathParam("naam") String naam) {
+        try {
+            Book.getBook().getGerechtByName(naam).setFavoriet(true);
+            return Response.ok().build();
+        }catch (Exception e){
+           return Response.status(Response.Status.CONFLICT).build();
+        }
+    }
+
     @DELETE
     @Path("/{naam}")
     @Produces(MediaType.APPLICATION_JSON)

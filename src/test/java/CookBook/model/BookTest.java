@@ -49,7 +49,7 @@ public class BookTest{
                 });
 
         book.getGerecht(ger1).setFavoriet(true);
-        assertEquals(true, book.getGerecht(ger1).isFavoriet());
+        assertEquals(1, book.getGerecht(ger1).getFavoriet());
     }
 
     @Test

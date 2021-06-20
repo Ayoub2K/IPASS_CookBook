@@ -20,10 +20,18 @@ function updatePagina(values) {
 
     const insertPoint = document.querySelector(".gerechtBlok");
     insertPoint.appendChild(myTemplateClone);
+
+    const fav = document.querySelector("#favoButton");
+    fav.addEventListener("click", e => isFavoriet())
+}
+
+function isFavoriet(){
+    GerechtenService.isFavoriet(queryString);
 }
 
 GerechtenService.getGerecht(queryString)
     .then(data => {
+        console.log(data)
         updatePagina(data);
     })
     .catch( error => {

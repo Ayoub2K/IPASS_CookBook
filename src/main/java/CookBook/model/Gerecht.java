@@ -10,7 +10,7 @@ public class Gerecht  implements Serializable {
     private String beschrijving;
     private String bereidingstijd;
     private String bereidingswijze;
-    private boolean favoriet;
+    private int favoriet;
     private String categorie;
     private double portie;
 
@@ -23,6 +23,7 @@ public class Gerecht  implements Serializable {
         this.bereidingswijze = bereidingswijze;
         this.categorie = categorie;
         this.portie = Integer.parseInt(portie);
+        this.favoriet = 0;
     }
 
     public Gerecht(String naam, String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, String portie, List<Ingredient> ingredientenList) {
@@ -33,6 +34,7 @@ public class Gerecht  implements Serializable {
         this.categorie = categorie;
         this.portie = Integer.parseInt(portie);
         this.alleIngredienten = ingredientenList;
+        this.favoriet = 0;
     }
 
     public String getNaam(){
@@ -52,14 +54,14 @@ public class Gerecht  implements Serializable {
     }
 
     public void setFavoriet(boolean fav){
-        this.favoriet = fav;
+        this.favoriet += 1;
     }
 
-    public boolean isFavoriet() {
+    public int getFavoriet() {
         return favoriet;
     }
 
-    public void bewerkGerecht( String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, String portie){
+    public void bewerkGerecht(String beschrijving, String bereidingstijd, String bereidingswijze, String categorie, String portie){
         this.beschrijving = beschrijving;
         this.bereidingstijd = bereidingstijd;
         this.bereidingswijze = bereidingswijze;
@@ -73,14 +75,14 @@ public class Gerecht  implements Serializable {
         alleIngredienten.add(new Ingredient(naam, hoeveelheid, calper100));
     }
 
-    //Wijzig hoeveelheid van dit ingredient
-    public void wijzigIngHvlheid(String naam, int hoeveelheid){
-        for (Ingredient ingredient : alleIngredienten){
-            if (ingredient.getNaam().equals(naam)){
-                ingredient.setHoeveelheid(hoeveelheid);
-            }
-        }
-    }
+//    //Wijzig hoeveelheid van dit ingredient
+//    public void wijzigIngHvlheid(String naam, int hoeveelheid){
+//        for (Ingredient ingredient : alleIngredienten){
+//            if (ingredient.getNaam().equals(naam)){
+//                ingredient.setHoeveelheid(hoeveelheid);
+//            }
+//        }
+//    }
 
 
     //Verwijder Ingredient uit dit recept
@@ -146,7 +148,7 @@ public class Gerecht  implements Serializable {
                     && ((Gerecht) andereObject).getBereidingstijd().equals(bereidingstijd)
                     && ((Gerecht) andereObject).getBereidingswijze().equals(bereidingswijze)
                     && ((Gerecht) andereObject).getBeschrijving().equals(beschrijving)
-                    && ((Gerecht) andereObject).isFavoriet() == favoriet
+                    && ((Gerecht) andereObject).getFavoriet() == favoriet
                     && ((Gerecht) andereObject).getPortie() == portie
                     ;}
         else {

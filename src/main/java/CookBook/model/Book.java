@@ -103,7 +103,7 @@ public class Book  implements Serializable {
     public List<Gerecht> getFavorieten(){
         List<Gerecht> favorietenGerechten = new ArrayList<>();
         for(Gerecht gerecht : alleGerechten){
-            if(gerecht.isFavoriet()){
+            if(gerecht.getFavoriet() > 0){
                 favorietenGerechten.add(gerecht);
             }
         }

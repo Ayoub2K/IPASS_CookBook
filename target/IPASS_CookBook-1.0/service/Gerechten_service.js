@@ -13,6 +13,19 @@ export default class gerechten_service{
             })
     }
 
+    static isFavoriet(naam){
+        return fetch(`/restservices/gerechten/favoriet/${naam}`)
+            .then(function (response){
+                if( response.ok ) {
+                    console.log("Favoriet +1")
+                }
+                else{ alert("Er is iets mis gegaan")}
+            })
+            .catch(error => {
+                alert("Er is iets mis gegaan 2")
+            })
+    }
+
     static deleteGerecht(naam){
         return fetch(`/restservices/gerechten/${naam}`,{ method : "DELETE"})
             .then(function (response){
