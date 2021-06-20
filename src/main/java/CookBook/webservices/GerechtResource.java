@@ -29,6 +29,20 @@ public class GerechtResource {
     }
 
     @GET
+    @Path("favorieten")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getFavorieten() {
+        Book book = Book.getBook();
+        List<Gerecht> alleGerechten = book.getFavorieten();
+
+        if (alleGerechten == null) {
+            return Response.status(Response.Status.CONFLICT).entity(new AbstractMap.SimpleEntry<>("error", "Deze Book is leeg")).build();
+        } else {
+            return Response.ok(alleGerechten).build();
+        }
+    }
+
+    @GET
     @Path("/{naam}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getGerecht(@PathParam("naam") String naam) {

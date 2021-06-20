@@ -27,6 +27,7 @@ function updatePagina(values) {
 
 function isFavoriet(){
     GerechtenService.isFavoriet(queryString);
+    alert("Danku")
 }
 
 GerechtenService.getGerecht(queryString)

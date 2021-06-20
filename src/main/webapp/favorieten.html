@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>CookBook</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/loginBanner.css">
     <link rel="shortcut icon" type="image/jpg" href="Resources/favicon.ico"/>
+    <link rel="stylesheet" href="css/loginBanner.css">
     <script type="module" src="loginBanner.js"></script>
+    <script type="module" src="service/Gerechten_service.js"></script>
+    <script type="module" src="favorieten.js"></script>
 </head>
 <body>
 <div class="loginBanner">
@@ -17,17 +19,28 @@
     <img id="logo-main" src="Resources/logo1.png" width="200" alt="Logo">
     <navbar>
         <div class="topnav">
-            <a class="active" href="#">Startpagina</a>
+            <a href="index.html">Startpagina</a>
             <a href="gerechten.html">Gerechten</a>
-            <a href="favorieten.html">Favorieten</a>
+            <a class="active" href="favorieten.html">Favorieten</a>
             <a href="paneel.html">admin paneel</a>
         </div>
     </navbar>
 </header>
+<main>
     <div class="row">
-        <p style="margin-top: 100px; text-align: center;">Welkom op CookBook.nl, Bekijk al onze gerechten voor heerlijke inspiratie 🍕</p>
+        <ul class="gerechtenlijst">
+        </ul>
+        <template id="lijstGerechten">
+            <li class="gerecht">
+                <a class="gerechtLink" href="#">
+                    <img class="gerechtImg">
+                    <div class="gerechtNaam">gerecht 1</div>
+                    <div class="gerechtBeschrijving">beschrijving</div>
+                </a>
+            </li>
+        </template>
     </div>
+</main>
 </div>
-
 </body>
 </html>

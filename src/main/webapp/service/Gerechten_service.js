@@ -13,6 +13,11 @@ export default class gerechten_service{
             })
     }
 
+    static getFavorieten() {
+        return fetch('/restservices/gerechten/favorieten')
+            .then((response) => response.json());
+    }
+
     static isFavoriet(naam){
         return fetch(`/restservices/gerechten/favoriet/${naam}`)
             .then(function (response){
