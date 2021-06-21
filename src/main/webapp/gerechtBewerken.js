@@ -92,12 +92,9 @@ function updatePagina(values) {
 function addIngredientList(data){
     const template = document.querySelector('#lijstIngredienten')
     const myTemplateClone = template.content.cloneNode(true);
-    // console.log(data)
 
     myTemplateClone.querySelector(".Ingredientnaam").textContent =  data.naam + ", ";
     myTemplateClone.querySelector(".hoeveelheid").textContent = " " + data.hoeveelheid + " gr/ml ";
-    // myTemplateClone.querySelector(".hoeveelheid").textContent = "   Hoeveelheid: " + data.hoeveelheid + ", ";
-    //myTemplateClone.querySelector(".calsper").textContent = "   calorieen per 100 gr/ml: " + data.calper100;
 
     //wijigHoeveelheid
     const IngredientModal = myTemplateClone.querySelector('#bewerkHoeveelheid');

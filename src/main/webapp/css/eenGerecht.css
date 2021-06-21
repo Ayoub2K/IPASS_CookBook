@@ -17,14 +17,15 @@
 }
 .gerechtNaam{
     display: inline-block;
-    width: 90%;
+    width: 80%;
     font-size: 27px;
 }
 
 .gerechtLinks{
     float: left;
     padding-left: 3%;
-    width: calc(75% - 3%);
+    padding-right: 3%;
+    width: calc(75% - 6%);
 }
 
 .gerechtRechts{
@@ -39,9 +40,41 @@
 .favoriet{
     display: inline-block;
     float: right;
+    cursor: pointer;
+    margin-right: 20px;
 }
 
 .favoriet > img{
     max-height: 50px;
+}
+
+@media print {
+    .topnav{
+        display: none;
+    }
+    .loginBanner{
+        display: none;
+    }
+    .favoriet{
+        display: none;
+    }
+    label{
+        display: none;
+    }
+
+    #verversPorties{
+        display: none;
+    }
+}
+
+.BekerenSpan{
+    font-weight: bolder;
+}
+
+#verversPorties{
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    background: #24a0ed ;
 }
 

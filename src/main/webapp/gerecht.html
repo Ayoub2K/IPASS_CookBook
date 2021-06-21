@@ -32,6 +32,9 @@
   <template id="gerechtTemplate">
     <div class="gerechtHeader">
       <h2 class="gerechtNaam">Gerechtnaam</h2>
+      <div class="favoriet" id="printbutton">
+        <img src="Resources/print-button.png">
+      </div>
       <div class="favoriet" id="favoButton">
         <img src="Resources/Button-Favorite-icon.png">
       </div>
@@ -44,6 +47,8 @@
       <p class="bereidingswijze">bereidingswijze</p>
     </div>
     <div class="gerechtRechts">
+      <label for="aantalPorties"><SPAN  class="BekerenSpan"> aantal porties:</SPAN> <input type="number" min="1" id="aantalPorties" name="aantalPorties"/></label>
+      <input type="button" id="verversPorties" value="ververs">
       <h3>ingredienten</h3>
       <p class="ingredienten"></p>
     </div>
