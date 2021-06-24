@@ -11,7 +11,7 @@ function updatePagina(values) {
     // myTemplateClone.querySelector(".beschrijving").textContent = "beschrijving: " + values.beschrijving;
     myTemplateClone.querySelector(".bereidingstijd").textContent = "bereidingstijd: " + values.bereidingstijd;
     myTemplateClone.querySelector(".bereidingswijze").textContent = "bereidingswijze: " + values.bereidingswijze;
-    myTemplateClone.querySelector(".calorieen").textContent = "calorieen: " + values.totaalCalorieen;
+    myTemplateClone.querySelector(".calorieen").innerHTML = "calorieen: <span class='cals'>" + values.totaalCalorieen + "</span>";
 
     for(let i = 0; i < values.alleIngredienten.length; i++){
         myTemplateClone.querySelector(".ingredienten").innerHTML += values.alleIngredienten[i].naam + " <span class='hoeveelheid'>" + values.alleIngredienten[i].hoeveelheid + "</span> gr <br>";
@@ -45,6 +45,10 @@ function berekenPortie(data){
         const waarde = (hoeveelheidIngredient / portieGroote) * opgevraageWaarde;
         hvl[i].innerHTML = waarde
     }
+    const cals = document.querySelector(".cals")
+    const calsData = data.totaalCalorieen
+    const waardeCals = (calsData/ portieGroote) * opgevraageWaarde;
+    cals.innerHTML = waardeCals
 }
 
 GerechtenService.getGerecht(queryString)
