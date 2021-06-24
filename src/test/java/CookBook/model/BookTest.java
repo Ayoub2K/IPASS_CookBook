@@ -53,6 +53,22 @@ public class BookTest{
     }
 
     @Test
+    public void testFavget(){
+        Gerecht ger1 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", "1");
+        Gerecht ger2 = new Gerecht("vis met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", "1");
+        Gerecht ger3 = new Gerecht("pizza met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", "1");
+
+        book.addGerecht(ger1);
+        book.addGerecht(ger2);
+        book.addGerecht(ger3);
+
+        book.getGerecht(ger1).setFavoriet(true);
+        book.getGerecht(ger2).setFavoriet(true);
+        book.getGerecht(ger3).setFavoriet(true);
+        assertEquals(3, book.getFavorieten().size());
+    }
+
+    @Test
     public void testVerwijderen(){
         Gerecht ger5 = new Gerecht("Kip met rijst", "kip met rijst en saus", "20 min", "kook rijst", "vlees", "1");
         ger5.voegIngredient("kip", 150, 100);

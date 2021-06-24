@@ -8,7 +8,7 @@ function updatePagina(values) {
 
     myTemplateClone.querySelector(".gerechtNaam").textContent = values.naam;
     myTemplateClone.querySelector(".categorie").textContent = "categorie: " + values.categorie;
-    myTemplateClone.querySelector(".beschrijving").textContent = "beschrijving: " + values.beschrijving;
+    // myTemplateClone.querySelector(".beschrijving").textContent = "beschrijving: " + values.beschrijving;
     myTemplateClone.querySelector(".bereidingstijd").textContent = "bereidingstijd: " + values.bereidingstijd;
     myTemplateClone.querySelector(".bereidingswijze").textContent = "bereidingswijze: " + values.bereidingswijze;
     myTemplateClone.querySelector(".calorieen").textContent = "calorieen: " + values.totaalCalorieen;

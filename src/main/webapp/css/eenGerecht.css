@@ -78,3 +78,20 @@
     background: #24a0ed ;
 }
 
+.categorie{
+    font-weight: bold;
+    float: left;
+}
+
+.calorieen{
+    float: right;
+    font-weight: bold;
+}
+
+.bereidingswijze{
+
+}
+
+.bereidingstijd{
+        margin-top: 50px;
+}

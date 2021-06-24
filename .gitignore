@@ -4,3 +4,5 @@ target/IPASS_CookBook-1.0/META-INF/MANIFEST.MF
 .idea/modules.xml
 IPASS_CookBook.iml
 target/IPASS_CookBook-1.0/META-INF/MANIFEST.MF
+target/classes/CookBook/model/Gerecht.class
+/target/
