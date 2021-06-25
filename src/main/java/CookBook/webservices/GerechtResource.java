@@ -63,6 +63,7 @@ public class GerechtResource {
 
     @DELETE
     @Path("/{naam}")
+    @RolesAllowed("editor")
     @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@PathParam("naam") String naam) {
         Book book = Book.getBook();
@@ -73,6 +74,7 @@ public class GerechtResource {
 
     @DELETE
     @Path("/{gerechtNaam}/{ingredientNaam}")
+    @RolesAllowed("editor")
     @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@PathParam("gerechtNaam") String gerechtNaam, @PathParam("ingredientNaam") String ingredientNaam) {
         Book book = Book.getBook();
@@ -123,6 +125,7 @@ public class GerechtResource {
 
     @POST
     @Path("object")
+    @RolesAllowed("editor")
     public Response createGerechtObject(String body) throws JsonProcessingException {
 
         JsonNode jsonNode = new ObjectMapper().readTree(body);
@@ -138,6 +141,7 @@ public class GerechtResource {
 
     @POST
     @Path("{gerechtNaam}/ingredient")
+    @RolesAllowed("editor")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public Response createGerecht(@PathParam("gerechtNaam") String gerechtNaam,
@@ -157,6 +161,7 @@ public class GerechtResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{gerechtNaam}/{ingredientNaam}")
+    @RolesAllowed("editor")
     public Response putIngredient(@PathParam("gerechtNaam") String gerechtNaam,
                                   @PathParam("ingredientNaam") String ingredientNaam,
                                   @FormParam("hoeveelheidIngr") int hoeveelheid) {
