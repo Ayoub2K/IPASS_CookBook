@@ -156,6 +156,24 @@ public class GerechtResource {
             return Response.status(Response.Status.CONFLICT).build();
         }
     }
+    
+    @PUT
+    @Path("{gerechtNaam}/ingredient/hvlheid")
+    @RolesAllowed("editor")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response ChangeHvl(@PathParam("gerechtNaam") String gerechtNaam,
+                                  @FormParam("naam") String naam,
+                                  @FormParam("hoeveelheid") int hoeveelheid,
+                                  @FormParam("calper") int calper) {
+
+        if (Book.getBook().containsName(gerechtNaam)) {
+            Book.getBook().getGerechtByName(gerechtNaam).voegIngredient(naam, hoeveelheid, calper);
+            return Response.ok().build();
+        } else {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
+    }
 
     @PUT
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
